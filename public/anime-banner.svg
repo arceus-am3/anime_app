@@ -1,0 +1,42 @@
+<svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22060C"/>
+      <stop offset="0.5" stop-color="#16040A"/>
+      <stop offset="1" stop-color="#14060E"/>
+    </linearGradient>
+    <linearGradient id="flare" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FB7185"/>
+      <stop offset="1" stop-color="#FB923C"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#FCA5A5" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="720" fill="url(#bg)"/>
+  <rect width="1600" height="720" fill="url(#grid)"/>
+
+  <ellipse cx="260" cy="150" rx="280" ry="180" fill="#BE123C" fill-opacity="0.32" filter="url(#blur)"/>
+  <ellipse cx="1320" cy="110" rx="260" ry="160" fill="#DC2626" fill-opacity="0.28" filter="url(#blur)"/>
+  <ellipse cx="980" cy="620" rx="360" ry="200" fill="#9A3412" fill-opacity="0.28" filter="url(#blur)"/>
+
+  <g opacity="0.3">
+    <path d="M110 620C190 520 340 470 510 490C680 510 760 600 870 580" stroke="#FDA4AF" stroke-width="3"/>
+    <path d="M620 100C760 70 900 110 1020 200" stroke="#FDBA74" stroke-width="3"/>
+    <path d="M990 280C1140 230 1280 260 1400 350" stroke="#FCA5A5" stroke-width="3"/>
+  </g>
+
+  <g opacity="0.32">
+    <circle cx="220" cy="210" r="6" fill="#FFE4E6"/>
+    <circle cx="380" cy="180" r="4" fill="#FFE4E6"/>
+    <circle cx="1290" cy="250" r="5" fill="#FFE4E6"/>
+    <circle cx="1160" cy="330" r="4" fill="#FFE4E6"/>
+  </g>
+
+  <text x="96" y="468" fill="url(#flare)" font-size="112" font-family="Arial, sans-serif" font-weight="700" opacity="0.16">ANIME ARENA</text>
+  <text x="102" y="536" fill="#FFE4E6" font-size="34" font-family="Arial, sans-serif" font-weight="600" opacity="0.14">WATCH  READ  CHAT  TOGETHER</text>
+</svg>

@@ -2,86 +2,59 @@ import type React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 
-// Enhanced metadata for SEO
 export const metadata: Metadata = {
-  // Basic metadata
+  metadataBase: new URL("https://anime-arena.app"),
   title: {
-    default: "ShonenX - Anime Streaming Reimagined",
-    template: "%s | ShonenX", // For dynamic page titles (e.g., "About | ShonenX")
+    default: "AnimeArena - Stream, Read, Chat, Together",
+    template: "%s | AnimeArena",
   },
   description:
-    "Discover ShonenX, an open-source anime streaming app built with Flutter. Enjoy seamless streaming on mobile and desktop with a modern, user-friendly interface designed for anime fans.",
+    "AnimeArena is a modern anime platform with sub/dub/hindi-dub streaming, episode downloads, manga, social chat, quests, and watch-together rooms.",
   keywords: [
-    "ShonenX",
+    "AnimeArena",
     "anime streaming",
-    "open-source",
-    "Flutter app",
-    "anime app",
-    "streaming platform",
-    "mobile streaming",
-    "desktop streaming",
+    "hindi dub anime",
+    "sub dub anime",
+    "anime download",
+    "anime schedule",
+    "anime manga",
+    "watch together",
+    "anime community",
   ],
-  // Open Graph (for social media sharing)
   openGraph: {
-    title: "ShonenX - Anime Streaming Reimagined",
+    title: "AnimeArena - Stream, Read, Chat, Together",
     description:
-      "Stream your favorite anime with ShonenX, an open-source app built with Flutter. Available on mobile and desktop.",
-    url: "https://www.shonenx.com", // Replace with your actual domain
-    siteName: "ShonenX",
-    images: [
-      {
-        url: "https://www.shonenx.com/og-image.jpg", // Replace with your actual image URL
-        width: 1200,
-        height: 630,
-        alt: "ShonenX Anime Streaming App",
-      },
-    ],
-    locale: "en_US",
+      "Watch anime in sub/dub/hindi-dub, download episodes, read manga, and join watch parties in one place.",
+    url: "https://anime-arena.app",
+    siteName: "AnimeArena",
     type: "website",
+    locale: "en_US",
   },
-  // Twitter Cards
   twitter: {
     card: "summary_large_image",
-    title: "ShonenX - Anime Streaming Reimagined",
+    title: "AnimeArena - Stream, Read, Chat, Together",
     description:
-      "Stream anime seamlessly with ShonenX, an open-source Flutter app for mobile and desktop.",
-    images: ["https://www.shonenx.com/twitter-image.jpg"], // Replace with your actual image URL
+      "A complete anime app with streaming, downloads, manga, social chat, quests, and watch-together rooms.",
   },
-  // Robots and indexing
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
-  // Verification for search engines (optional)
-  // Example: Google Search Console verification
-  // verification: {
-  //   google: "your-google-verification-code",
-  // },
 };
 
-// Structured data (JSON-LD) for rich snippets
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "ShonenX",
-  description:
-    "ShonenX is an open-source anime streaming app built with Flutter, offering a seamless experience on mobile and desktop devices.",
-  applicationCategory: "Entertainment",
-  operatingSystem: "Android, Windows",
+  name: "AnimeArena",
+  applicationCategory: "EntertainmentApplication",
+  operatingSystem: "Android, Windows, Web",
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
   },
-  url: "https://www.shonenx.com", // Replace with your actual domain
-  image: "https://www.shonenx.com/og-image.jpg", // Replace with your actual image URL
+  description:
+    "AnimeArena is an anime platform for streaming, manga reading, social chat, and synchronized watch-together sessions.",
 };
 
 export default function RootLayout({
@@ -92,13 +65,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Character encoding */}
         <meta charSet="utf-8" />
-        {/* Viewport for responsive design */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Preconnect to critical resources (optional) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        {/* Structured data (JSON-LD) */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
