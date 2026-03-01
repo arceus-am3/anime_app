@@ -91,6 +91,10 @@ export default function Home() {
   }, []);
 
   const latestRelease = versions[0] || null;
+  const androidDownloadUrl =
+    process.env.NEXT_PUBLIC_ANDROID_DOWNLOAD_URL ||
+    latestRelease?.android?.downloadLink ||
+    "#";
 
   const quickStats = useMemo(
     () => [
@@ -201,7 +205,7 @@ export default function Home() {
 
             <div id="downloads" className="scroll-mt-32 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <a
-                href={latestRelease?.android?.downloadLink || "#"}
+                href={androidDownloadUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-slate-600 to-slate-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 transition hover:from-slate-500 hover:to-slate-400 sm:w-auto"

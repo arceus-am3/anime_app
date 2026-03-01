@@ -23,6 +23,10 @@ export function Downloads({ versions }: any) {
           android: { downloadLink: "#" },
           windows: { downloadLink: "#" },
         };
+  const androidDownloadUrl =
+    process.env.NEXT_PUBLIC_ANDROID_DOWNLOAD_URL ||
+    latestVersion.android?.downloadLink ||
+    "#";
 
   const handleDownload = (platform: string, url: string) => {
     setDownloading(platform);
@@ -56,7 +60,7 @@ export function Downloads({ versions }: any) {
         </svg>
       ),
       description: "APK File",
-      downloadLink: latestVersion.android?.downloadLink,
+      downloadLink: androidDownloadUrl,
       status: "available",
       requirements: "Android 6.0+ • 2GB RAM",
     },
