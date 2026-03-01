@@ -27,7 +27,7 @@ export function Changelogs({ changelogs = [] }: { changelogs?: ChangelogEntry[] 
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300/80">Release Notes</p>
           <h1 className="mt-3 text-4xl font-black text-white sm:text-5xl">What Changed Recently</h1>
           <p className="mx-auto mt-4 max-w-2xl text-zinc-300">
-            Track every improvement, fix, and new feature shipped for AnimeArena.
+            Track every improvement, fix, and new feature shipped for In Anime.
           </p>
         </motion.div>
 

@@ -26,6 +26,8 @@ type Release = {
   windows?: { downloadLink?: string | null };
 };
 
+const APP_VERSION = "1.0.0";
+
 const featureCards = [
   {
     title: "Sub, Dub, Hindi Dub",
@@ -100,7 +102,7 @@ export default function Home() {
     () => [
       {
         label: "Latest Version",
-        value: latestRelease?.number ? `v${latestRelease.number}` : "v1.0.0",
+        value: `v${APP_VERSION}`,
       },
       {
         label: "Total Downloads",
@@ -111,7 +113,7 @@ export default function Home() {
         value: "Watch, Manga, Social",
       },
     ],
-    [latestRelease?.number, totalDownloads]
+    [totalDownloads]
   );
 
   const renderLivePanel = () => (
@@ -180,11 +182,11 @@ export default function Home() {
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-300/25 bg-slate-400/15 px-4 py-2 text-sm font-semibold text-slate-100">
               <Sparkles className="h-4 w-4" />
-              Premium Anime Experience
+              In Anime
             </span>
 
             <h1 className="max-w-3xl text-4xl font-black leading-tight text-white sm:text-6xl">
-              Ek App, <span className="text-gradient">Pura Anime</span> Universe
+              <span className="text-gradient">In Anime</span>
             </h1>
 
             <p className="max-w-2xl text-base leading-relaxed text-zinc-200/90 sm:text-lg">
@@ -232,15 +234,11 @@ export default function Home() {
             </div>
 
             <div className="grid gap-2 border-t border-zinc-800/80 pt-4 text-xs text-zinc-400 sm:grid-cols-3 sm:text-sm">
-              <p className="rounded-lg border border-zinc-800 bg-zinc-900/40 px-3 py-2">
-                Uptime: <span className="font-semibold text-zinc-200">99.9%</span>
-              </p>
+         
               <p className="rounded-lg border border-zinc-800 bg-zinc-900/40 px-3 py-2">
                 Streams: <span className="font-semibold text-zinc-200">Sub + Dub + Hindi</span>
               </p>
-              <p className="rounded-lg border border-zinc-800 bg-zinc-900/40 px-3 py-2">
-                Sync Room: <span className="font-semibold text-zinc-200">Realtime</span>
-              </p>
+            
             </div>
           </motion.div>
 

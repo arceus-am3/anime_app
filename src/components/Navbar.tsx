@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -35,11 +36,11 @@ export function Navbar() {
         }`}
       >
         <Link href="/" className="inline-flex items-center gap-2.5">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-400/20 text-slate-200">
-            <Sparkles className="h-4 w-4" />
+          <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900/80">
+            <Image src="/in-anime-logo.svg" alt="In Anime logo" width={28} height={28} />
           </span>
           <div>
-            <p className="text-sm font-semibold tracking-wide text-slate-100">AnimeArena</p>
+            <p className="text-sm font-semibold tracking-wide text-slate-100">In Anime</p>
             <p className="text-xs text-zinc-400">Stream. Read. Socialize.</p>
           </div>
         </Link>

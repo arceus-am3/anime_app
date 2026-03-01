@@ -11,6 +11,8 @@ import { useState } from "react";
 import ScrollFloat from "./blocks/TextAnimations/ScrollFloat/ScrollFloat";
 import { PlatformCard } from "./PlatformCard";
 
+const APP_VERSION = "1.0.0";
+
 export function Downloads({ versions }: any) {
   const [downloading, setDownloading] = useState<string | null>(null);
 
@@ -156,7 +158,7 @@ export function Downloads({ versions }: any) {
             scrollEnd="bottom bottom-=40%"
             stagger={0.03}
           >
-            Download ShonenX
+            Download In Anime
           </ScrollFloat>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -166,7 +168,7 @@ export function Downloads({ versions }: any) {
             className="text-xl text-white/70 max-w-2xl mx-auto"
           >
             Stream your favorite anime with our latest version{" "}
-            {latestVersion.number}
+            {APP_VERSION}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

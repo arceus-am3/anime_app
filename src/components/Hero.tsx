@@ -1,12 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/src/components/ui/button";
 import { motion } from "framer-motion";
 import { Download, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import Aurora from "@/src/blocks/Backgrounds/Aurora/Aurora";
 import Link from "next/link";
+
+const APP_VERSION = "1.0.0";
 
 export function Hero({
   latestRelease,
@@ -73,7 +74,7 @@ export function Hero({
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-7xl font-extrabold text-white leading-tight"
           >
-            ShonenX
+            In Anime
             <span className="block text-3xl md:text-4xl font-semibold text-primary mt-2">
               Your Anime Streaming Hub
             </span>
@@ -132,8 +133,7 @@ export function Hero({
           transition={{ duration: 0.6, delay: 1.6 }}
           className="text-white/60 text-sm mt-8"
         >
-          Latest Release: v
-          {(isClient ? latestRelease?.number : "1.0.0") || "1.0.0"}
+          Latest Release: v{APP_VERSION}
         </motion.div>
       </div>
     </section>
