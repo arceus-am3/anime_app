@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -11,7 +12,6 @@ import {
   MessageSquare,
   PlayCircle,
   Radio,
-  Sparkles,
   Trophy,
   UserCircle2,
   Users,
@@ -181,12 +181,12 @@ export default function Home() {
             className="space-y-6 lg:space-y-7"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-300/25 bg-slate-400/15 px-4 py-2 text-sm font-semibold text-slate-100">
-              <Sparkles className="h-4 w-4" />
-              In Anime
+              <Image src="/icon.svg" alt="In Anime logo" width={16} height={16} />
+              In Anime!
             </span>
 
             <h1 className="max-w-3xl text-4xl font-black leading-tight text-white sm:text-6xl">
-              <span className="text-gradient">In Anime</span>
+              In Anime!
             </h1>
 
             <p className="max-w-2xl text-base leading-relaxed text-zinc-200/90 sm:text-lg">

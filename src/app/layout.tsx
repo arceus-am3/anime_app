@@ -5,13 +5,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://in-anime.vercel.app"),
   title: {
-    default: "In Anime - Stream, Read, Chat, Together",
-    template: "%s | In Anime",
+    default: "In Anime! - Stream, Read, Chat, Together",
+    template: "%s | In Anime!",
   },
   description:
-    "In Anime is a modern anime platform with sub/dub/hindi-dub streaming, episode downloads, manga, social chat, quests, and watch-together rooms.",
+    "In Anime! is a modern anime platform with sub/dub/hindi-dub streaming, episode downloads, manga, social chat, quests, and watch-together rooms.",
   keywords: [
-    "In Anime",
+    "In Anime!",
     "anime streaming",
     "hindi dub anime",
     "sub dub anime",
@@ -27,17 +27,17 @@ export const metadata: Metadata = {
     apple: "/in-anime-logo.svg",
   },
   openGraph: {
-    title: "In Anime - Stream, Read, Chat, Together",
+    title: "In Anime! - Stream, Read, Chat, Together",
     description:
       "Watch anime in sub/dub/hindi-dub, download episodes, read manga, and join watch parties in one place.",
     url: "https://in-anime.vercel.app",
-    siteName: "In Anime",
+    siteName: "In Anime!",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "In Anime - Stream, Read, Chat, Together",
+    title: "In Anime! - Stream, Read, Chat, Together",
     description:
       "A complete anime app with streaming, downloads, manga, social chat, quests, and watch-together rooms.",
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "In Anime",
+  name: "In Anime!",
   applicationCategory: "EntertainmentApplication",
   operatingSystem: "Android, Windows, Web",
   offers: {
@@ -59,7 +59,7 @@ const structuredData = {
     priceCurrency: "USD",
   },
   description:
-    "In Anime is an anime platform for streaming, manga reading, social chat, and synchronized watch-together sessions.",
+    "In Anime! is an anime platform for streaming, manga reading, social chat, and synchronized watch-together sessions.",
 };
 
 export default function RootLayout({

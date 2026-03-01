@@ -37,10 +37,10 @@ export function Navbar() {
       >
         <Link href="/" className="inline-flex items-center gap-2.5">
           <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900/80">
-            <Image src="/in-anime-logo.svg" alt="In Anime logo" width={28} height={28} />
+            <Image src="/icon.svg" alt="In Anime! logo" width={22} height={22} />
           </span>
           <div>
-            <p className="text-sm font-semibold tracking-wide text-slate-100">In Anime</p>
+            <p className="text-sm font-semibold tracking-wide text-slate-100">In Anime!</p>
             <p className="text-xs text-zinc-400">Stream. Read. Socialize.</p>
           </div>
         </Link>
@@ -93,3 +93,4 @@ export function Navbar() {
     </header>
   );
 }
+

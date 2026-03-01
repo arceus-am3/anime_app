@@ -158,7 +158,7 @@ export function Downloads({ versions }: any) {
             scrollEnd="bottom bottom-=40%"
             stagger={0.03}
           >
-            Download In Anime
+            Download In Anime!
           </ScrollFloat>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

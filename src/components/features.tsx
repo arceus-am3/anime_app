@@ -62,7 +62,7 @@ export function Features() {
             Powerful Features
           </ScrollFloat>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            In Anime is designed with anime fans in mind, combining powerful
+            In Anime! is designed with anime fans in mind, combining powerful
             features with a sleek and intuitive interface.
           </p>
         </div>

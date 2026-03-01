@@ -17,7 +17,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <h3 className="text-xl font-bold text-white">In Anime</h3>
+            <h3 className="text-xl font-bold text-white">In Anime!</h3>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-zinc-400">
               One platform for anime streaming, manga, social features, quests, and watch-together rooms.
             </p>
@@ -62,7 +62,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-zinc-800 pt-6 text-sm text-zinc-500">
-          Copyright {new Date().getFullYear()} In Anime. Crafted for anime fans.
+          Copyright {new Date().getFullYear()} In Anime!. Crafted for anime fans.
         </div>
       </div>
     </footer>

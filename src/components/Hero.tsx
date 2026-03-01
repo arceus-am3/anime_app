@@ -74,7 +74,7 @@ export function Hero({
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-7xl font-extrabold text-white leading-tight"
           >
-            In Anime
+            In Anime!
             <span className="block text-3xl md:text-4xl font-semibold text-primary mt-2">
               Your Anime Streaming Hub
             </span>
