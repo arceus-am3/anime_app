@@ -107,14 +107,25 @@ return (
   <section className="mx-auto max-w-7xl px-4 pt-24 pb-12 grid lg:grid-cols-2 gap-10 items-center">
     <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }}>
 
-      <div className="flex items-center gap-2 mb-3 text-white font-semibold">
-        <Image src="/icon.svg" alt="" width={18} height={18}/>
-        In Anime!
-      </div>
+    <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  className="flex items-center gap-4 mb-4"
+>
+  <div className="relative h-12 w-12 sm:h-14 sm:w-14">
+    <Image
+      src="/icon.svg"
+      alt="In Anime logo"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
 
-      <h1 className="text-3xl sm:text-4xl font-black leading-tight mb-4">
-        Watch Anime Without Limits
-      </h1>
+  <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+    In Anime
+  </h1>
+</motion.div>
 
       <p className="text-zinc-400 mb-6 max-w-lg">
         Stream, download, track releases, read manga, and watch together —
