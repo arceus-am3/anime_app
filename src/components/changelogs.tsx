@@ -15,78 +15,90 @@ type ChangelogEntry = {
 
 export function Changelogs({ changelogs = [] }: { changelogs?: ChangelogEntry[] }) {
   return (
-    <section id="changelogs" className="relative pb-16">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
-        >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300/80">Release Notes</p>
-          <h1 className="mt-3 text-4xl font-black text-white sm:text-5xl">What Changed Recently</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-zinc-300">
-            Track every improvement, fix, and new feature shipped for In Anime!.
+    <section id="changelogs" className="relative py-24">
+      <div className="mx-auto max-w-4xl px-6">
+
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <p className="text-xs uppercase tracking-[0.25em] text-white/50">
+            Release Notes
           </p>
-        </motion.div>
+          <h1 className="mt-4 text-4xl md:text-5xl font-extrabold text-white">
+            Product Updates
+          </h1>
+          <p className="mt-4 text-white/70 max-w-xl mx-auto">
+            Every improvement, feature, and fix shipped to make In Anime better.
+          </p>
+        </div>
 
-        <div className="space-y-5">
-          {changelogs.length === 0 && (
-            <div className="rounded-2xl border border-zinc-700 bg-zinc-900/60 p-8 text-center text-zinc-300">
-              No changelog entries found yet.
-            </div>
-          )}
+        {/* Empty */}
+        {changelogs.length === 0 && (
+          <div className="rounded-xl border border-white/10 bg-white/5 p-10 text-center text-white/60">
+            No updates yet — first release coming soon.
+          </div>
+        )}
 
+        {/* Timeline */}
+        <div className="relative border-l border-white/10 pl-8 space-y-10">
           {changelogs.map((changelog, index) => (
             <motion.article
-              key={changelog.id ?? `${changelog.version}-${index}`}
-              initial={{ opacity: 0, y: 18 }}
+              key={changelog.id ?? index}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="rounded-2xl border border-zinc-700 bg-zinc-900/70 p-6 backdrop-blur-sm"
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+              className="relative"
             >
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-300/30 bg-slate-400/10 px-3 py-1.5 text-sm font-semibold text-slate-100">
-                  <Tag className="h-4 w-4" />
-                  v{changelog.version || "0.0.0"}
-                </div>
-                <div className="inline-flex items-center gap-2 text-sm text-zinc-400">
-                  <CalendarDays className="h-4 w-4" />
-                  {changelog.date
-                    ? new Date(changelog.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })
-                    : "Unknown date"}
-                </div>
-              </div>
+              {/* timeline dot */}
+              <div className="absolute -left-[34px] top-2 h-4 w-4 rounded-full bg-gradient-primary shadow-glow" />
 
-              {changelog.description && (
-                <div className="prose prose-invert max-w-none prose-p:text-zinc-300 prose-headings:text-white prose-strong:text-white prose-a:text-slate-300 hover:prose-a:text-slate-200 prose-code:text-slate-200 prose-code:bg-zinc-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{changelog.description}</ReactMarkdown>
-                </div>
-              )}
+              {/* card */}
+              <div className="rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur p-6">
 
-              {changelog.changes && changelog.changes.length > 0 && (
-                <div className="mt-6 border-t border-zinc-700 pt-4">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-zinc-300">Highlights</p>
-                  <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                    {changelog.changes.map((change, changeIndex) => (
-                      <li key={`${changelog.id}-change-${changeIndex}`} className="flex items-start gap-2">
-                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-300" />
-                        <span>{change}</span>
+                {/* header row */}
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+
+                  <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white">
+                    <Tag className="h-4 w-4" />
+                    Version {changelog.version || "0.0.0"}
+                  </div>
+
+                  <div className="flex items-center gap-2 text-sm text-white/50">
+                    <CalendarDays className="h-4 w-4" />
+                    {changelog.date
+                      ? new Date(changelog.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })
+                      : "Unknown date"}
+                  </div>
+                </div>
+
+                {/* description */}
+                {changelog.description && (
+                  <div className="prose prose-invert max-w-none prose-p:text-white/70 prose-headings:text-white">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {changelog.description}
+                    </ReactMarkdown>
+                  </div>
+                )}
+
+                {/* changes */}
+                {changelog.changes && changelog.changes.length > 0 && (
+                  <ul className="mt-6 space-y-2 text-white/70 text-sm">
+                    {changelog.changes.map((c, i) => (
+                      <li key={i} className="flex gap-2">
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/40" />
+                        {c}
                       </li>
                     ))}
                   </ul>
-                </div>
-              )}
+                )}
+              </div>
             </motion.article>
           ))}
         </div>
-
       </div>
     </section>
   );
