@@ -147,7 +147,7 @@ return (
 
     <div className="flex flex-wrap gap-2 mb-6">
       {["Sub | Dub | Hindi", "Downloads", "Global Chat", "Read Manga", "Watch Rooms"].map((t) => (
-        <span key={t} className="px-3 py-1 rounded-full border border-zinc-600 text-sm">
+        <span key={t} className="px-3 py-1 rounded-full border border-red-500/70 text-red-400 text-sm bg-red-500/5 hover:bg-red-500/10 transition"
           {t}
         </span>
       ))}
