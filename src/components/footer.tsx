@@ -12,7 +12,7 @@ export function Footer() {
         <div className="flex flex-col items-center text-center">
 
           <div className="flex items-center gap-3">
-            <div className="relative h-9 w-9">
+            <div className="relative h-5 w-5">
               <Image
                 src="/icon.svg"
                 alt="In Anime logo"
