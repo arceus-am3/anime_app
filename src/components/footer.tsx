@@ -9,6 +9,15 @@ export function Footer() {
 
         {/* Brand */}
         <div className="flex flex-col items-center text-center">
+              <div className="relative h-12 w-12 sm:h-14 sm:w-14">
+        <Image
+          src="/icon.svg"
+          alt="In Anime logo"
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
           <h3 className="text-xl font-semibold text-white">In Anime</h3>
           <p className="mt-2 max-w-md text-sm text-zinc-400">
             Stream anime, read manga, and watch together — all in one place.
