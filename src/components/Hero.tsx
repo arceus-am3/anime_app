@@ -45,28 +45,28 @@ export function Hero({
 
       <div className="relative z-10 container mx-auto max-w-5xl px-6 text-center">
 
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm text-white/80 backdrop-blur"
-        >
-          {isClient ? totalDownloads?.toLocaleString() : "10,000+"} downloads worldwide
-        </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.3 }}
+  className="flex items-center justify-center gap-4"
+>
+  {/* Logo */}
+  <div className="relative h-14 w-14 md:h-16 md:w-16">
+    <Image
+      src="/icon.svg"
+      alt="In Anime logo"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
 
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-extrabold tracking-tight text-white"
-        >
-          Watch Anime.
-          <span className="block bg-gradient-primary bg-clip-text text-transparent">
-            Together.
-          </span>
-        </motion.h1>
+  {/* App name */}
+  <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
+    In Anime
+  </h1>
+</motion.div>
 
         {/* Subtext */}
         <motion.p
