@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
+import Image from "next/image";
 export function Footer() {
   return (
     <footer className="border-t border-zinc-800 bg-[#070a10]">
