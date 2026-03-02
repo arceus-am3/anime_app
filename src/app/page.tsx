@@ -106,18 +106,16 @@ return (
   {/* HERO */}
   <section className="relative mx-auto max-w-7xl px-4 pt-24 pb-12 grid lg:grid-cols-2 gap-10 items-center overflow-hidden">
 
-  {/* Background Image */}
-  <div className="absolute inset-0 -z-10">
+<div className="absolute inset-0 -z-10">
   <Image
-  src="/anime-banner.jpg"
-  alt="Anime background"
-  fill
-  priority
-  className="object-cover opacity-40"
-/>
-    {/* Dark overlay */}
-    <div className="absolute inset-0 bg-[#05070d]/80 backdrop-blur-[2px]" />
-  </div>
+    src="/anime-banner.jpg"
+    alt="Anime background"
+    fill
+    priority
+    className="object-cover"
+  />
+  <div className="absolute inset-0 bg-[#05070d]/80" />
+</div>
 
   {/* LEFT CONTENT */}
   <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }}>
