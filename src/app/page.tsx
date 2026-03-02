@@ -108,13 +108,13 @@ return (
 
   {/* Background Image */}
   <div className="absolute inset-0 -z-10">
-    <Image
-      src="/anime-banner.jpg"   // 👈 apni image yaha rakho (public folder me)
-      alt="Anime background"
-      fill
-      priority
-      className="object-cover opacity-40"
-    />
+  <Image
+  src="/anime-banner.jpg"
+  alt="Anime background"
+  fill
+  priority
+  className="object-cover opacity-40"
+/>
     {/* Dark overlay */}
     <div className="absolute inset-0 bg-[#05070d]/80 backdrop-blur-[2px]" />
   </div>
