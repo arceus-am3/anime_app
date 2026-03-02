@@ -48,7 +48,7 @@ export function Navbar() {
               In Anime
             </p>
             <p className="text-[11px] text-white/50">
-              Watch. Chat. Together.
+              Watch Anime Online
             </p>
           </div>
         </Link>
