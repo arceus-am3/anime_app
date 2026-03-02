@@ -130,9 +130,7 @@ return (
         <Image src="/icon.svg" alt="logo" fill className="object-contain" />
       </div>
 
-      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-        In Anime
-      </h1>
+<h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight"> In Anime! </h1>
     </div>
 
     <p className="text-zinc-300 mb-6 max-w-lg">
