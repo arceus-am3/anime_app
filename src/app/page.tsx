@@ -104,64 +104,86 @@ return (
 <Navbar />
 
   {/* HERO */}
-  <section className="mx-auto max-w-7xl px-4 pt-24 pb-12 grid lg:grid-cols-2 gap-10 items-center">
-    <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }}>
+  <section className="relative mx-auto max-w-7xl px-4 pt-24 pb-12 grid lg:grid-cols-2 gap-10 items-center overflow-hidden">
 
-    <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  className="flex items-center gap-4 mb-4"
->
-  <div className="relative h-12 w-12 sm:h-14 sm:w-14">
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-10">
     <Image
-      src="/icon.svg"
-      alt="In Anime logo"
+      src="/anime-banner.jpg"   // 👈 apni image yaha rakho (public folder me)
+      alt="Anime background"
       fill
-      className="object-contain"
       priority
+      className="object-cover opacity-40"
     />
+    {/* Dark overlay */}
+    <div className="absolute inset-0 bg-[#05070d]/80 backdrop-blur-[2px]" />
   </div>
 
-  <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-    In Anime
-  </h1>
-</motion.div>
+  {/* LEFT CONTENT */}
+  <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }}>
 
-<p className="text-zinc-400 mb-6 max-w-lg">
-  Stream, download, read manga, and watch together —
-  everything anime in one platform.
-</p>
-      <div className="flex flex-wrap gap-2 mb-6">
-        {["Sub | Dub | Hindi", "Downloads", "Global Chat", "Read Manga", "Watch Rooms"].map((t) => (
-          <span key={t} className="px-3 py-1 rounded-full border border-zinc-700 text-sm">
-            {t}
-          </span>
-        ))}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="flex items-center gap-4 mb-4"
+    >
+      <div className="relative h-12 w-12 sm:h-14 sm:w-14">
+        <Image
+          src="/icon.svg"
+          alt="In Anime logo"
+          fill
+          className="object-contain"
+          priority
+        />
       </div>
 
-      <div className="flex flex-wrap gap-3">
-        <a
-          href={androidDownloadUrl}
-          className="px-6 py-3 rounded-xl bg-slate-600 text-white font-semibold"
-        >
-          Download for Android
-        </a>
-
-        <a
-          href={latestRelease?.windows?.downloadLink || "#"}
-          className="px-6 py-3 rounded-xl border border-zinc-700"
-        >
-          Download for Windows
-        </a>
-
-        <Link href="/changelogs" className="px-6 py-3 rounded-xl border border-zinc-700 flex items-center gap-1">
-          Changelogs <ArrowUpRight className="h-4 w-4"/>
-        </Link>
-      </div>
+      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+        In Anime
+      </h1>
     </motion.div>
 
-    <div>{renderLivePanel()}</div>
-  </section>
+    <p className="text-zinc-300 mb-6 max-w-lg">
+      Stream, download, read manga, and watch together —
+      everything anime in one platform.
+    </p>
+
+    <div className="flex flex-wrap gap-2 mb-6">
+      {["Sub | Dub | Hindi", "Downloads", "Global Chat", "Read Manga", "Watch Rooms"].map((t) => (
+        <span key={t} className="px-3 py-1 rounded-full border border-zinc-600 text-sm">
+          {t}
+        </span>
+      ))}
+    </div>
+
+    <div className="flex flex-wrap gap-3">
+      <a
+        href={androidDownloadUrl}
+        className="px-6 py-3 rounded-xl bg-slate-500 hover:bg-slate-400 text-white font-semibold transition"
+      >
+        Download for Android
+      </a>
+
+      <a
+        href={latestRelease?.windows?.downloadLink || "#"}
+        className="px-6 py-3 rounded-xl border border-zinc-600 hover:border-zinc-400 transition"
+      >
+        Download for Windows
+      </a>
+
+      <Link
+        href="/changelogs"
+        className="px-6 py-3 rounded-xl border border-zinc-600 hover:border-zinc-400 transition flex items-center gap-1"
+      >
+        Changelogs <ArrowUpRight className="h-4 w-4"/>
+      </Link>
+    </div>
+
+  </motion.div>
+
+  {/* RIGHT PANEL */}
+  <div>{renderLivePanel()}</div>
+
+</section>
 
   {/* FEATURES */}
   <section className="mx-auto max-w-7xl px-4 pb-24">
