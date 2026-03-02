@@ -1,80 +1,90 @@
 "use client";
 
-import { Code, PenTool, Zap, Globe, Shield, Monitor } from "lucide-react";
+import { Tv, Users, Download, MessageCircle, Zap, Sparkles } from "lucide-react";
 import SpotlightCard from "./blocks/Components/SpotlightCard/SpotlightCard";
 import ScrollFloat from "./blocks/TextAnimations/ScrollFloat/ScrollFloat";
 
 export function Features() {
   const features = [
     {
-      icon: <Zap className="h-6 w-6 " />,
-      title: "Lightning Fast",
+      icon: <Tv className="h-6 w-6" />,
+      title: "Stream Without Limits",
       description:
-        "Enjoy smooth performance with our optimized streaming engine.",
+        "Watch anime in sub, dub, and Hindi dub with smooth playback and minimal buffering.",
     },
     {
-      icon: <Globe className="h-6 w-6" />,
-      title: "Wide Collection",
+      icon: <Users className="h-6 w-6" />,
+      title: "Watch Together",
       description:
-        "Access thousands of anime titles from various sources in one place.",
+        "Create synchronized watch rooms and enjoy episodes with friends in real time.",
     },
     {
-      icon: <Shield className="h-6 w-6" />,
-      title: "Open Source",
+      icon: <Download className="h-6 w-6" />,
+      title: "Offline Downloads",
       description:
-        "Transparent and community-driven development you can trust.",
+        "Save episodes locally and watch anytime without relying on internet speed.",
     },
     {
-      icon: <Monitor className="h-6 w-6" />,
-      title: "Multi-platform",
+      icon: <MessageCircle className="h-6 w-6" />,
+      title: "Community Built-In",
       description:
-        "Currently available on Android, Windows and Linux planned for the future.",
+        "Global chat, friends messaging, and social features designed for anime fans.",
     },
     {
-      icon: <Code className="h-6 w-6" />,
-      title: "Built with Flutter",
-      description: "Modern codebase with a beautiful and responsive UI.",
+      icon: <Zap className="h-6 w-6" />,
+      title: "Optimized Engine",
+      description:
+        "Fast loading, smart caching, and optimized streaming infrastructure.",
     },
     {
-      icon: <PenTool className="h-6 w-6" />,
-      title: "Customizable",
+      icon: <Sparkles className="h-6 w-6" />,
+      title: "Anime-First Experience",
       description:
-        "Personalize your experience with themes and viewing options.",
+        "Everything from UI to features is crafted specifically for anime lovers.",
     },
   ];
 
   return (
-    <section id="features" className="py-24 relative overflow-hidden">
-      {/* Background elements */}
-      {/* <div className="absolute -top-40 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div> */}
+    <section id="features" className="py-28 relative overflow-hidden">
 
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="text-center mb-16">
+      {/* soft gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0b0f19] to-transparent opacity-70 pointer-events-none" />
+
+      <div className="container mx-auto max-w-6xl px-5">
+        <div className="text-center mb-20">
           <ScrollFloat
-            textClassName="text-4xl font-bold mb-4"
+            textClassName="text-4xl md:text-5xl font-bold mb-6 tracking-tight"
             animationDuration={1}
             ease="back.inOut(2)"
-            scrollStart="center bottom+=50%"
+            scrollStart="center bottom+=40%"
             scrollEnd="bottom bottom-=40%"
             stagger={0.03}
           >
-            Powerful Features
+            Built for Anime Fans
           </ScrollFloat>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            In Anime! is designed with anime fans in mind, combining powerful
-            features with a sleek and intuitive interface.
+
+          <p className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
+            In Anime combines streaming, community, and personalization into one seamless anime platform.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <SpotlightCard className="h-full" key={index}>
-              <div className="mb-4 border-2 rounded-full w-12 h-12 flex items-center justify-center">
+            <SpotlightCard
+              key={index}
+              className="group h-full p-7 transition duration-300 hover:scale-[1.02]"
+            >
+              <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-white/20 transition">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-white/70">{feature.description}</p>
+
+              <h3 className="text-xl font-semibold mb-2 tracking-tight">
+                {feature.title}
+              </h3>
+
+              <p className="text-white/70 leading-relaxed text-sm">
+                {feature.description}
+              </p>
             </SpotlightCard>
           ))}
         </div>
