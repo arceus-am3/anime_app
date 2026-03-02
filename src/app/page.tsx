@@ -156,7 +156,7 @@ return (
     <div className="flex flex-wrap gap-3">
       <a
         href={androidDownloadUrl}
-        className="px-6 py-3 rounded-xl bg-slate-500 hover:bg-slate-400 text-white font-semibold transition"
+        className="px-6 py-3 rounded-xl bg-red-500/10 hover:bg-slate-400 text-white font-semibold transition"
       >
         Download for Android
       </a>
