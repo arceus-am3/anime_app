@@ -83,14 +83,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQJ4ZJEDYS"></script>
-<script>
+<Script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQJ4ZJEDYS"></Script>
+<Script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-ZQJ4ZJEDYS');
-</script>
+</Script>
       </head>
       <body>{children}</body>
     </html>
