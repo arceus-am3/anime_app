@@ -103,74 +103,75 @@ return (
 <main className="min-h-screen bg-[#05070d] text-zinc-100">
 <Navbar />
 
-  {/* HERO */}
-  <section className="relative mx-auto max-w-7xl px-4 pt-24 pb-12 grid lg:grid-cols-2 gap-10 items-center overflow-hidden">
+<section className="relative mx-auto max-w-7xl px-4 pt-24 pb-12 grid lg:grid-cols-2 gap-10 items-center overflow-hidden">
 
-<div className="absolute inset-0 -z-10">
-  <Image
-    src="/anime-banner.jpg"
-    alt="Anime background"
-    fill
-    priority
-    className="object-cover"
-  />
-  <div className="absolute inset-0 bg-[#05070d]/80" />
-</div>
+  {/* BACKGROUND IMAGE */}
+  <div className="absolute inset-0 -z-10">
+    <Image
+      src="/anime-banner.jpg"
+      alt="Anime background"
+      fill
+      priority
+      className="object-cover scale-110 blur-[2px]"
+    />
+    <div className="absolute inset-0 bg-gradient-to-br from-[#05070d]/95 via-[#05070d]/85 to-[#140000]/90" />
+  </div>
 
   {/* LEFT CONTENT */}
-  <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }}>
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+  >
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="flex items-center gap-4 mb-4"
-    >
+    {/* LOGO + NAME */}
+    <div className="flex items-center gap-4 mb-4">
       <div className="relative h-12 w-12 sm:h-14 sm:w-14">
-        <Image
-          src="/icon.svg"
-          alt="In Anime logo"
-          fill
-          className="object-contain"
-          priority
-        />
+        <Image src="/icon.svg" alt="logo" fill className="object-contain" />
       </div>
 
-      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+      <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
         In Anime
       </h1>
-    </motion.div>
+    </div>
 
     <p className="text-zinc-300 mb-6 max-w-lg">
       Stream, download, read manga, and watch together —
-      everything anime in one platform.
+      everything anime in one powerful platform.
     </p>
 
+    {/* RED TAGS */}
     <div className="flex flex-wrap gap-2 mb-6">
       {["Sub | Dub | Hindi", "Downloads", "Global Chat", "Read Manga", "Watch Rooms"].map((t) => (
-        <span key={t} className="px-3 py-1 rounded-full border border-red-500/70 text-red-400 text-sm bg-red-500/5 hover:bg-red-500/10 transition"
+        <motion.span
+          key={t}
+          whileHover={{ scale: 1.05 }}
+          className="px-3 py-1 rounded-full border border-red-500/70 text-red-400 text-sm bg-red-500/5 hover:bg-red-500/15 transition"
+        >
           {t}
-        </span>
+        </motion.span>
       ))}
     </div>
 
+    {/* BUTTONS */}
     <div className="flex flex-wrap gap-3">
       <a
         href={androidDownloadUrl}
-        className="px-6 py-3 rounded-xl bg-red-500/10 hover:bg-slate-400 text-white font-semibold transition"
+        className="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold shadow-lg shadow-red-900/40 transition"
       >
         Download for Android
       </a>
 
       <a
         href={latestRelease?.windows?.downloadLink || "#"}
-        className="px-6 py-3 rounded-xl border border-zinc-600 hover:border-zinc-400 transition"
+        className="px-6 py-3 rounded-xl border border-red-500/50 hover:border-red-400 text-red-300 hover:text-red-200 transition"
       >
         Download for Windows
       </a>
 
       <Link
         href="/changelogs"
-        className="px-6 py-3 rounded-xl border border-zinc-600 hover:border-zinc-400 transition flex items-center gap-1"
+        className="px-6 py-3 rounded-xl border border-zinc-600 hover:border-red-500 text-zinc-300 hover:text-white transition flex items-center gap-1"
       >
         Changelogs <ArrowUpRight className="h-4 w-4"/>
       </Link>
