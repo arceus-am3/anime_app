@@ -24,7 +24,7 @@ export function Footer() {
 
             <div className="text-left">
               <h3 className="text-lg font-semibold text-white leading-none">
-                In Anime
+                In Anime!
               </h3>
               <p className="text-xs text-zinc-400">
                 Watch anime online
@@ -48,7 +48,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="mt-10 border-t border-zinc-800 pt-6 text-center text-xs text-zinc-500">
-          © {new Date().getFullYear()} In Anime. All rights reserved.
+          © {new Date().getFullYear()} In Anime!. All rights reserved.
         </div>
 
       </div>
