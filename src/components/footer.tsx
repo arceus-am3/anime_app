@@ -8,20 +8,30 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
 
         {/* Brand */}
-        <div className="flex flex-col items-center text-center">
-              <div className="relative h-12 w-12 sm:h-14 sm:w-14">
-        <Image
-          src="/icon.svg"
-          alt="In Anime logo"
-          fill
-          className="object-contain"
-          priority
-        />
-      </div>
-          <h3 className="text-xl font-semibold text-white">In Anime</h3>
-          <p className="mt-2 max-w-md text-sm text-zinc-400">
-            Stream anime, read manga, and watch together — all in one place.
-          </p>
+<div className="flex items-center gap-4 justify-center">
+  <div className="relative h-9 w-9">
+    <Image
+      src="/icon.svg"
+      alt="In Anime logo"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
+
+  <div className="text-left">
+    <h3 className="text-lg font-semibold text-white leading-none">
+      In Anime
+    </h3>
+    <p className="text-xs text-zinc-400">
+      Watch anime online
+    </p>
+  </div>
+</div>
+
+<p className="mt-4 max-w-md text-sm text-zinc-400 text-center">
+  Stream anime, read manga, and watch together — all in one place.
+</p>
 
           {/* Simple links */}
           <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-zinc-400">
