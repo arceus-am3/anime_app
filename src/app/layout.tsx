@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     default: "In Anime! - Stream, Read, Chat, Together",
     template: "%s | In Anime!",
   },
+  verification: {
+    google: "T8KzFAcGqN48othb97RVZw2PW1CnUFPg6Zcepv6biCk",
+  },
   description:
     "In Anime! is a modern anime platform with sub/dub/hindi-dub streaming, episode downloads, manga, social chat, quests, and watch-together rooms.",
   keywords: [
@@ -61,11 +64,7 @@ const structuredData = {
   description:
     "In Anime! is an anime platform for streaming, manga reading, social chat, and synchronized watch-together sessions.",
 };
-export const metadata = {
-  verification: {
-    google: "T8KzFAcGqN48othb97RVZw2PW1CnUFPg6Zcepv6biCk",
-  },
-};
+
 export default function RootLayout({
   children,
 }: Readonly<{
