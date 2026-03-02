@@ -132,7 +132,7 @@ return (
   everything anime in one platform.
 </p>
       <div className="flex flex-wrap gap-2 mb-6">
-        {["Sub/Dub/Hindi", "Downloads", "Schedule", "Manga", "Watch Rooms"].map((t) => (
+        {["Sub | Dub | Hindi", "Downloads", "Global Chat", "Read Manga", "Watch Rooms"].map((t) => (
           <span key={t} className="px-3 py-1 rounded-full border border-zinc-700 text-sm">
             {t}
           </span>
