@@ -6,6 +6,7 @@ import { Download, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import Aurora from "@/src/blocks/Backgrounds/Aurora/Aurora";
 import Link from "next/link";
+import Image from "next/image"; // ✅ MISSING IMPORT ADDED
 
 const APP_VERSION = "1.0.0";
 
@@ -35,7 +36,6 @@ export function Hero({
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
 
-      {/* Background */}
       <Aurora
         colorStops={["#5b8cff", "#a855f7", "#ff6b9d"]}
         blend={0.7}
@@ -45,28 +45,27 @@ export function Hero({
 
       <div className="relative z-10 container mx-auto max-w-5xl px-6 text-center">
 
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.3 }}
-  className="flex items-center justify-center gap-4"
->
-  {/* Logo */}
-  <div className="relative h-14 w-14 md:h-16 md:w-16">
-    <Image
-      src="/icon.svg"
-      alt="In Anime logo"
-      fill
-      className="object-contain"
-      priority
-    />
-  </div>
+        {/* Logo + App Name */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center justify-center gap-4"
+        >
+          <div className="relative h-16 w-16 md:h-20 md:w-20">
+            <Image
+              src="/icon.svg"
+              alt="In Anime logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
 
-  {/* App name */}
-  <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
-    In Anime
-  </h1>
-</motion.div>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+            In Anime
+          </h1>
+        </motion.div>
 
         {/* Subtext */}
         <motion.p
@@ -75,8 +74,9 @@ export function Hero({
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed"
         >
-          Stream anime in sub, dub, and Hindi dub. Chat with fans, download episodes,
-          and watch in sync with friends — all inside one seamless platform.
+          Stream anime in sub, dub, and Hindi dub. Chat with fans,
+          download episodes, and watch in sync with friends —
+          all inside one seamless platform.
         </motion.p>
 
         {/* CTA */}
@@ -107,7 +107,6 @@ export function Hero({
           </Link>
         </motion.div>
 
-        {/* Version */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
