@@ -127,11 +127,10 @@ return (
   </h1>
 </motion.div>
 
-      <p className="text-zinc-400 mb-6 max-w-lg">
-        Stream, download, track releases, read manga, and watch together —
-        all inside one unified anime platform.
-      </p>
-
+<p className="text-zinc-400 mb-6 max-w-lg">
+  Stream, download, read manga, and watch together —
+  everything anime in one platform.
+</p>
       <div className="flex flex-wrap gap-2 mb-6">
         {["Sub/Dub/Hindi", "Downloads", "Schedule", "Manga", "Watch Rooms"].map((t) => (
           <span key={t} className="px-3 py-1 rounded-full border border-zinc-700 text-sm">
