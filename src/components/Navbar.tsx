@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -14,78 +14,108 @@ const navItems = [
 ];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 14);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handle = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", handle);
+    return () => window.removeEventListener("scroll", handle);
   }, []);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-4">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+
       <motion.div
-        initial={{ opacity: 0, y: -14 }}
+        initial={{ opacity: 0, y: -18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
-        className={`mx-auto flex w-full max-w-7xl items-center justify-between rounded-2xl border px-4 py-3 sm:px-5 ${
-          isScrolled
-            ? "glass-panel border-zinc-600/50"
-            : "border-zinc-700/60 bg-zinc-950/70 backdrop-blur-md"
-        }`}
+        className={`
+          mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-5 py-3
+          backdrop-blur-xl border transition-all
+          ${scrolled
+            ? "bg-black/70 border-white/10 shadow-soft"
+            : "bg-black/40 border-white/5"}
+        `}
       >
-        <Link href="/" className="inline-flex items-center gap-2.5">
-          <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900/80">
-            <Image src="/icon.svg" alt="In Anime! logo" width={22} height={22} />
-          </span>
-          <div>
-            <p className="text-sm font-semibold tracking-wide text-slate-100">In Anime!</p>
-            <p className="text-xs text-zinc-400">Stream. Read. Socialize.</p>
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+            <Image src="/icon.svg" alt="logo" width={22} height={22} />
+          </div>
+          <div className="leading-tight">
+            <p className="text-sm font-semibold text-white tracking-tight">
+              In Anime
+            </p>
+            <p className="text-[11px] text-white/50">
+              Watch. Chat. Together.
+            </p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        {/* Desktop Nav */}
+        <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-zinc-300 transition hover:text-white"
+              className="relative text-sm text-white/70 transition hover:text-white"
             >
               {item.label}
+              <span className="absolute left-0 -bottom-1 h-px w-0 bg-white/70 transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
 
+        {/* CTA */}
+        <div className="hidden md:flex">
+          <Link
+            href="/#downloads"
+            className="flex items-center gap-2 rounded-full bg-gradient-primary px-5 py-2 text-sm text-white shadow-glow transition hover:scale-[1.04]"
+          >
+            <Download className="h-4 w-4" />
+            Download
+          </Link>
+        </div>
+
+        {/* Mobile Toggle */}
         <button
-          className="rounded-lg border border-zinc-700 p-2 text-zinc-300 transition hover:text-white md:hidden"
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          aria-label="Toggle navigation menu"
+          onClick={() => setOpen(!open)}
+          className="rounded-lg border border-white/10 p-2 text-white/70 md:hidden"
         >
-          {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <X /> : <Menu />}
         </button>
       </motion.div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {isMenuOpen && (
+        {open && (
           <motion.nav
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -14 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -14 }}
             transition={{ duration: 0.2 }}
-            className="mx-auto mt-2 w-full max-w-7xl rounded-2xl border border-zinc-700 bg-zinc-950/95 p-4 backdrop-blur-xl md:hidden"
+            className="mx-auto mt-2 max-w-7xl rounded-2xl border border-white/10 bg-black/90 backdrop-blur-xl p-4 md:hidden"
           >
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-300 transition hover:bg-zinc-900 hover:text-white"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-4 py-3 text-white/80 hover:bg-white/5"
                 >
                   {item.label}
                 </Link>
               ))}
+
+              <Link
+                href="/#downloads"
+                onClick={() => setOpen(false)}
+                className="mt-2 rounded-lg bg-gradient-primary px-4 py-3 text-center text-white"
+              >
+                Download App
+              </Link>
             </div>
           </motion.nav>
         )}
@@ -93,4 +123,3 @@ export function Navbar() {
     </header>
   );
 }
-
